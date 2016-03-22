@@ -150,6 +150,8 @@ public class RequestBinTutorial {
 <div id="request-detail-{{request.id}}" class="request-detail">
     <div class="row-fluid">
       <div class="span4">
+        <h5>GATEWAY URL</h5>
+        <p class="keypair">{{bin.gateway}}</p>
         <h5>FORM/POST PARAMETERS</h5>
         {% for k,v in request.form_data %}
           <p class="keypair"><strong>{{k}}:</strong> {{v}}</p>

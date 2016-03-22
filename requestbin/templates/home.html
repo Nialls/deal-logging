@@ -3,7 +3,7 @@
     <script type="text/javascript">
       function createBin() {
         $.ajax({'url': '/api/v1/bins', 'type': 'POST', 
-          'data': {'private': $('#private').prop("checked")},
+          'data': {'private': $('#private').prop("checked"), 'gateway': $('#gateway').val()},
           'success': function(data) {
             window.location.href = "/"+data['name']+"?inspect";
           }

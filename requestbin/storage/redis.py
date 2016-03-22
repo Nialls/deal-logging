@@ -25,7 +25,8 @@ class RedisStorage():
     def create_bin(self, private=False):
         bin = Bin(private)
         key = self._key(bin.name)
-        self.redis.set(key, bin.dump())
+        gateway = self._gateway(bin.gateway)
+        self.redis.set(key, gateway, bin.dump())
         self.redis.expireat(key, int(bin.created+self.bin_ttl))
         return bin
 
