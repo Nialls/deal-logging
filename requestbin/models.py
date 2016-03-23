@@ -19,7 +19,6 @@ class Bin(object):
     def __init__(self, private=False):
         self.created = time.time()
         self.private = private
-        self.gateway = gateway
         self.color = random_color()
         self.name = tinyid(8)
         self.favicon_uri = solid16x16gif_datauri(*self.color)
@@ -32,7 +31,7 @@ class Bin(object):
     def to_dict(self):
         return dict(
             private=self.private,
-            gateway=self.gateway 
+            gateway=self.gateway, 
             color=self.color, 
             name=self.name,
             request_count=self.request_count)
