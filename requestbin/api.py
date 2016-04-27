@@ -23,7 +23,8 @@ def bins():
     bin = db.create_bin(private)
     if bin.private:
         session[bin.name] = bin.secret_key
-        
+
+    assert isinstance(gateway, object)
     session[bin.gateway] = gateway
     return _response(bin.to_dict())
 
