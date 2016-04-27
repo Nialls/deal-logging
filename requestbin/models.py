@@ -18,6 +18,7 @@ class Bin(object):
 
     def __init__(self, private=False):
         self.created = time.time()
+        self.gateway = gateway
         self.private = private
         self.color = random_color()
         self.name = tinyid(8)
