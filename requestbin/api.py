@@ -19,7 +19,6 @@ def _response(object, code=200):
 @app.endpoint('api.bins')
 def bins():
     private = request.form.get('private') == 'true'
-    gateway = request.form.get('gateway')
     bin = db.create_bin(private)
     if bin.private:
         session[bin.name] = bin.secret_key
