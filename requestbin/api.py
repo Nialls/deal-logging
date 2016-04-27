@@ -25,7 +25,7 @@ def bins():
         session[bin.name] = bin.secret_key
 
     assert isinstance(object)
-    session[bin.gateway] = gateway
+    # session[bin.gateway] = gateway
     return _response(bin.to_dict())
 
 
